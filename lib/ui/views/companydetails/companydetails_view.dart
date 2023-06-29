@@ -62,38 +62,10 @@ class CompanydetailsView extends StackedView<CompanydetailsViewModel>
               keyboardType: TextInputType.name,
             ),
             const SizedBox(height: 20),
-            DropdownButton(
-              items: const [
-                DropdownMenuItem(
-                  child: Text("Private Limited"),
-                  value: "Private Limited",
-                ),
-                DropdownMenuItem(
-                  child: Text("Public Limited"),
-                  value: "Public Limited",
-                ),
-                DropdownMenuItem(
-                  child: Text("Partnership"),
-                  value: "Partnership",
-                ),
-                DropdownMenuItem(
-                  child: Text("Proprietorship"),
-                  value: "Proprietorship",
-                ),
-                DropdownMenuItem(
-                  child: Text("LLP"),
-                  value: "LLP",
-                ),
-                DropdownMenuItem(
-                  child: Text("Others"),
-                  value: "Others",
-                ),
-              ],
-              onChanged: (value) {
-                print(value);
-                viewModel.setCompanyType(value.toString());
-              },
-            ),
+            CHIDropDownBottomSheet(
+                title: "Company Type",
+                items: viewModel.companyTypeList,
+                onTap: () {}),
             const SizedBox(height: 20),
             CHIButton(btnLabel: kNext, onTap: () => viewModel.next())
           ],
@@ -113,3 +85,36 @@ class CompanydetailsView extends StackedView<CompanydetailsViewModel>
   ) =>
       CompanydetailsViewModel();
 }
+
+// DropdownButton(
+//               items: const [
+//                 DropdownMenuItem(
+//                   child: Text("Private Limited"),
+//                   value: "Private Limited",
+//                 ),
+//                 DropdownMenuItem(
+//                   child: Text("Public Limited"),
+//                   value: "Public Limited",
+//                 ),
+//                 DropdownMenuItem(
+//                   child: Text("Partnership"),
+//                   value: "Partnership",
+//                 ),
+//                 DropdownMenuItem(
+//                   child: Text("Proprietorship"),
+//                   value: "Proprietorship",
+//                 ),
+//                 DropdownMenuItem(
+//                   child: Text("LLP"),
+//                   value: "LLP",
+//                 ),
+//                 DropdownMenuItem(
+//                   child: Text("Others"),
+//                   value: "Others",
+//                 ),
+//               ],
+//               onChanged: (value) {
+//                 print(value);
+//                 viewModel.setCompanyType(value.toString());
+//               },
+//             ),

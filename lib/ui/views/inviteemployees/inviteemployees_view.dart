@@ -44,7 +44,9 @@ class InviteemployeesView extends StackedView<InviteemployeesViewModel> {
           ),
           CHIButton(
             btnLabel: "Dashboard",
-            onTap: () {},
+            onTap: () {
+              viewModel.goToAdminDashboard();
+            },
           )
         ],
       ))),
